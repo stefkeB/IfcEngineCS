@@ -3,7 +3,7 @@
  * email  :  lin@bimer.cn
  * file   :  IfcEngine
  * history:  created by LinJiarui at 2015/8/7 17:00:54
- *           modified by
+ *           modified by Stefan Boeykens at 2020/6/1
  * ***********************************************/
 using System;
 using System.Collections.Generic;
@@ -1911,7 +1911,10 @@ namespace IfcEngineCS
         private const int flagbit13 = 8192;       // 2^^13   0010.0000..0000.0000
         private const int flagbit14 = 16384;      // 2^^14   0100.0000..0000.0000
         private const int flagbit15 = 32768;      // 2^^15   1000.0000..0000.0000
-
+        private const int flagbit24 = 16777216;   // 2^^24
+        private const int flagbit25 = 33554432;   // 2^^25
+        private const int flagbit26 = 67108864;   // 2^^26
+        private const int flagbit27 = 134217728;  // 2^^27
         private const int sdaiADB = 1;
         private const int sdaiAGGR = sdaiADB + 1;
         private const int sdaiBINARY = sdaiAGGR + 1;
@@ -1938,7 +1941,14 @@ namespace IfcEngineCS
             UseIndex64 = flagbit3,
             GenNormals = flagbit5,
             GenTriangles = flagbit8,
+            GenPolygons = flagbit9,
             GenWireFrame = flagbit12,
+            GenConceptualFaces = flagbit13,
+
+            GenAmbient = flagbit24,
+            GenDiffuse = flagbit25,
+            GenEmissive = flagbit26,
+            GenSpecular = flagbit27,
         }
 
         [Flags]
@@ -1952,7 +1962,14 @@ namespace IfcEngineCS
             UseIndex64 = flagbit3,
             GenNormals = flagbit5,
             GenTriangles = flagbit8,
-            GenWireframe = flagbit12
+            GenPolygons = flagbit9,
+            GenWireframe = flagbit12,
+            GenConceptualFaces = flagbit13,
+
+            GenAmbient = flagbit24,
+            GenDiffuse = flagbit25,
+            GenEmissive = flagbit26,
+            GenSpecular = flagbit27,
         }
 
         [Flags]
